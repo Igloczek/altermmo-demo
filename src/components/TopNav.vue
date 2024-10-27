@@ -23,7 +23,10 @@
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Gry</NavigationMenuTrigger>
+            <NavigationMenuTrigger>
+              <Gamepad2 class="mr-2 h-4 w-4" />
+              Gry
+            </NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul class="grid gap-3 p-6 lg:w-[900px] lg:grid-cols-3">
                 <li class="row-span-4">
@@ -92,8 +95,13 @@
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
+
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Społeczność</NavigationMenuTrigger>
+            <NavigationMenuTrigger>
+              <UsersRound class="mr-2 h-4 w-4" />
+
+              Społeczność
+            </NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul class="grid w-[400px] gap-3 p-4">
                 <li
@@ -176,6 +184,8 @@
     CalendarDays,
     Search,
     User,
+    Gamepad2,
+    UsersRound,
   } from "lucide-vue-next"
 
   import {
