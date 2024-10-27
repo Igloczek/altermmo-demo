@@ -1,0 +1,1460 @@
+<script is:inline>
+  window._wpemojiSettings = {
+    baseUrl: "https://s.w.org/images/core/emoji/15.0.3/72x72/",
+    ext: ".png",
+    svgUrl: "https://s.w.org/images/core/emoji/15.0.3/svg/",
+    svgExt: ".svg",
+    source: {
+      concatemoji:
+        "https://www.altermmo.pl/wp-includes/js/wp-emoji-release.min.js?ver=6.6.2",
+    },
+  }
+  /*! This file is auto-generated */
+  !(function (i, n) {
+    var o, s, e
+    function c(e) {
+      try {
+        var t = { supportTests: e, timestamp: new Date().valueOf() }
+        sessionStorage.setItem(o, JSON.stringify(t))
+      } catch (e) {}
+    }
+    function p(e, t, n) {
+      e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(t, 0, 0)
+      var t = new Uint32Array(
+          e.getImageData(0, 0, e.canvas.width, e.canvas.height).data,
+        ),
+        r =
+          (e.clearRect(0, 0, e.canvas.width, e.canvas.height),
+          e.fillText(n, 0, 0),
+          new Uint32Array(
+            e.getImageData(0, 0, e.canvas.width, e.canvas.height).data,
+          ))
+      return t.every(function (e, t) {
+        return e === r[t]
+      })
+    }
+    function u(e, t, n) {
+      switch (t) {
+        case "flag":
+          return n(
+            e,
+            "\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f",
+            "\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f",
+          )
+            ? !1
+            : !n(
+                e,
+                "\ud83c\uddfa\ud83c\uddf3",
+                "\ud83c\uddfa\u200b\ud83c\uddf3",
+              ) &&
+                !n(
+                  e,
+                  "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f",
+                  "\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f",
+                )
+        case "emoji":
+          return !n(e, "\ud83d\udc26\u200d\u2b1b", "\ud83d\udc26\u200b\u2b1b")
+      }
+      return !1
+    }
+    function f(e, t, n) {
+      var r =
+          "undefined" != typeof WorkerGlobalScope &&
+          self instanceof WorkerGlobalScope
+            ? new OffscreenCanvas(300, 150)
+            : i.createElement("canvas"),
+        a = r.getContext("2d", { willReadFrequently: !0 }),
+        o = ((a.textBaseline = "top"), (a.font = "600 32px Arial"), {})
+      return (
+        e.forEach(function (e) {
+          o[e] = t(a, e, n)
+        }),
+        o
+      )
+    }
+    function t(e) {
+      var t = i.createElement("script")
+      ;(t.src = e), (t.defer = !0), i.head.appendChild(t)
+    }
+    "undefined" != typeof Promise &&
+      ((o = "wpEmojiSettingsSupports"),
+      (s = ["flag", "emoji"]),
+      (n.supports = { everything: !0, everythingExceptFlag: !0 }),
+      (e = new Promise(function (e) {
+        i.addEventListener("DOMContentLoaded", e, { once: !0 })
+      })),
+      new Promise(function (t) {
+        var n = (function () {
+          try {
+            var e = JSON.parse(sessionStorage.getItem(o))
+            if (
+              "object" == typeof e &&
+              "number" == typeof e.timestamp &&
+              new Date().valueOf() < e.timestamp + 604800 &&
+              "object" == typeof e.supportTests
+            )
+              return e.supportTests
+          } catch (e) {}
+          return null
+        })()
+        if (!n) {
+          if (
+            "undefined" != typeof Worker &&
+            "undefined" != typeof OffscreenCanvas &&
+            "undefined" != typeof URL &&
+            URL.createObjectURL &&
+            "undefined" != typeof Blob
+          )
+            try {
+              var e =
+                  "postMessage(" +
+                  f.toString() +
+                  "(" +
+                  [JSON.stringify(s), u.toString(), p.toString()].join(",") +
+                  "));",
+                r = new Blob([e], { type: "text/javascript" }),
+                a = new Worker(URL.createObjectURL(r), {
+                  name: "wpTestEmojiSupports",
+                })
+              return void (a.onmessage = function (e) {
+                c((n = e.data)), a.terminate(), t(n)
+              })
+            } catch (e) {}
+          c((n = f(s, u, p)))
+        }
+        t(n)
+      })
+        .then(function (e) {
+          for (var t in e)
+            (n.supports[t] = e[t]),
+              (n.supports.everything = n.supports.everything && n.supports[t]),
+              "flag" !== t &&
+                (n.supports.everythingExceptFlag =
+                  n.supports.everythingExceptFlag && n.supports[t])
+          ;(n.supports.everythingExceptFlag =
+            n.supports.everythingExceptFlag && !n.supports.flag),
+            (n.DOMReady = !1),
+            (n.readyCallback = function () {
+              n.DOMReady = !0
+            })
+        })
+        .then(function () {
+          return e
+        })
+        .then(function () {
+          var e
+          n.supports.everything ||
+            (n.readyCallback(),
+            (e = n.source || {}).concatemoji
+              ? t(e.concatemoji)
+              : e.wpemoji && e.twemoji && (t(e.twemoji), t(e.wpemoji)))
+        }))
+  })((window, document), window._wpemojiSettings)
+
+  // Add the following script contents:
+
+  const lazyloadRunObserver = () => {
+    const lazyloadBackgrounds = document.querySelectorAll(
+      `.e-con.e-parent:not(.e-lazyloaded)`,
+    )
+    const lazyloadBackgroundObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            let lazyloadBackground = entry.target
+            if (lazyloadBackground) {
+              lazyloadBackground.classList.add("e-lazyloaded")
+            }
+            lazyloadBackgroundObserver.unobserve(entry.target)
+          }
+        })
+      },
+      { rootMargin: "200px 0px 200px 0px" },
+    )
+    lazyloadBackgrounds.forEach((lazyloadBackground) => {
+      lazyloadBackgroundObserver.observe(lazyloadBackground)
+    })
+  }
+  const events = ["DOMContentLoaded", "elementor/lazyload/observe"]
+  events.forEach((event) => {
+    document.addEventListener(event, lazyloadRunObserver)
+  })
+
+  window.dataLayer = window.dataLayer || []
+  function gtag() {
+    dataLayer.push(arguments)
+  }
+  gtag("js", new Date())
+  gtag("config", "G-D2KJ47YVZZ")
+
+  // Funkcja AJAX do sprawdzania statusu streamu
+  function checkTwitchLiveStream(pageId, streamType) {
+    jQuery.ajax({
+      url: ajaxurl,
+      type: "POST",
+      data: {
+        action: "check_twitch_live_status",
+        page_id: pageId,
+      },
+      success: function (response) {
+        // console.log('Status streamu (' + streamType + '):', response);
+        if (response.success && response.data.live_streamer) {
+          var iframe = jQuery(".twitch-live-stream")
+          var currentSrc = iframe.attr("src")
+          var currentChannel = currentSrc
+            ? currentSrc.match(/channel=([^&]+)/)
+            : null
+          currentChannel = currentChannel ? currentChannel[1] : null
+
+          if (currentChannel !== response.data.live_streamer) {
+            // console.log('Zmiana streamu na: ' + response.data.live_streamer);
+            iframe.attr(
+              "src",
+              "https://player.twitch.tv/?channel=" +
+                response.data.live_streamer +
+                "&parent=" +
+                window.location.hostname,
+            )
+            jQuery(".twitch-live-stream-wrapper").show()
+            jQuery(".twitch-live-stream-info").hide()
+          } else {
+            // console.log('Streamer jest ten sam, brak potrzeby aktualizacji.');
+          }
+        } else if (streamType === "local") {
+          // console.log('Brak lokalnego streamera, sprawdzam globalnego.');
+          checkTwitchLiveStream("option", "global")
+        } else {
+          console.log("Brak aktywnego streamera.")
+          jQuery(".twitch-live-stream-wrapper").hide()
+          jQuery(".twitch-live-stream-info").show()
+        }
+      },
+      error: function (xhr, status, error) {
+        console.error("Błąd podczas sprawdzania statusu streamu:", error)
+        console.log("Szczegóły:", xhr.responseText)
+      },
+    })
+  }
+
+  // Funkcja do ustawienia interwału sprawdzania
+  function setupTwitchLiveChecker(pageId) {
+    // Natychmiastowe sprawdzenie przy załadowaniu strony
+    checkTwitchLiveStream(pageId, "local")
+
+    // Ustawienie interwału sprawdzania co minutę
+    setInterval(function () {
+      checkTwitchLiveStream(pageId, "local")
+    }, 60000) // Co 60 sekund
+  }
+
+  // Wywołaj funkcję po załadowaniu strony
+  jQuery(document).ready(function () {
+    var pageId = jQuery("body").data("page-id")
+    if (!pageId) {
+      console.error("Nie znaleziono atrybutu data-page-id na elemencie body.")
+      return
+    }
+    // console.log("Rozpoczynam sprawdzanie streamerów dla strony: " + pageId);
+    setupTwitchLiveChecker(pageId)
+  })
+
+  const localize = {
+    ajaxurl: "https://www.altermmo.pl/wp-admin/admin-ajax.php",
+    nonce: "334a0fd00a",
+    i18n: { added: "Added ", compare: "Compare", loading: "Loading..." },
+    eael_translate_text: {
+      required_text: "is a required field",
+      invalid_text: "Invalid",
+      billing_text: "Billing",
+      shipping_text: "Shipping",
+      fg_mfp_counter_text: "of",
+    },
+    page_permalink: "https://www.altermmo.pl/",
+    cart_redirectition: "no",
+    cart_page_url: "",
+    el_breakpoints: {
+      mobile: {
+        label: "Mobilny Pionowy",
+        value: 767,
+        default_value: 767,
+        direction: "max",
+        is_enabled: true,
+      },
+      mobile_extra: {
+        label: "Mobilny Poziomy",
+        value: 880,
+        default_value: 880,
+        direction: "max",
+        is_enabled: false,
+      },
+      tablet: {
+        label: "Portret tabletu",
+        value: 1024,
+        default_value: 1024,
+        direction: "max",
+        is_enabled: true,
+      },
+      tablet_extra: {
+        label: "Ekran tabletu",
+        value: 1200,
+        default_value: 1200,
+        direction: "max",
+        is_enabled: false,
+      },
+      laptop: {
+        label: "Laptop",
+        value: 1366,
+        default_value: 1366,
+        direction: "max",
+        is_enabled: false,
+      },
+      widescreen: {
+        label: "Szeroki ekran",
+        value: 2400,
+        default_value: 2400,
+        direction: "min",
+        is_enabled: false,
+      },
+    },
+  }
+
+  const ElementorProFrontendConfig = {
+    ajaxurl: "https://www.altermmo.pl/wp-admin/admin-ajax.php",
+    nonce: "5fec4c5881",
+    urls: {
+      assets:
+        "https://www.altermmo.pl/wp-content/plugins/elementor-pro/assets/",
+      rest: "https://www.altermmo.pl/wp-json/",
+    },
+    settings: { lazy_load_background_images: true },
+    shareButtonsNetworks: {
+      facebook: { title: "Facebook", has_counter: true },
+      twitter: { title: "Twitter" },
+      linkedin: { title: "LinkedIn", has_counter: true },
+      pinterest: { title: "Pinterest", has_counter: true },
+      reddit: { title: "Reddit", has_counter: true },
+      vk: { title: "VK", has_counter: true },
+      odnoklassniki: { title: "OK", has_counter: true },
+      tumblr: { title: "Tumblr" },
+      digg: { title: "Digg" },
+      skype: { title: "Skype" },
+      stumbleupon: { title: "StumbleUpon", has_counter: true },
+      mix: { title: "Mix" },
+      telegram: { title: "Telegram" },
+      pocket: { title: "Pocket", has_counter: true },
+      xing: { title: "XING", has_counter: true },
+      whatsapp: { title: "WhatsApp" },
+      email: { title: "Email" },
+      print: { title: "Print" },
+      "x-twitter": { title: "X" },
+      threads: { title: "Threads" },
+    },
+    facebook_sdk: { lang: "pl_PL", app_id: "" },
+    lottie: {
+      defaultAnimationUrl:
+        "https://www.altermmo.pl/wp-content/plugins/elementor-pro/modules/lottie/assets/animations/default.json",
+    },
+  }
+
+  const elementorFrontendConfig = {
+    environmentMode: {
+      edit: false,
+      wpPreview: false,
+      isScriptDebug: false,
+    },
+    i18n: {
+      shareOnFacebook: "Udost\u0119pnij na Facebooku",
+      shareOnTwitter: "Udost\u0119pnij na Twitterze",
+      pinIt: "Przypnij",
+      download: "Pobierz",
+      downloadImage: "Pobierz obraz",
+      fullscreen: "Tryb pe\u0142noekranowy",
+      zoom: "Powi\u0119ksz",
+      share: "Udost\u0119pnij",
+      playVideo: "Odtw\u00f3rz wideo",
+      previous: "Poprzednie",
+      next: "Nast\u0119pne",
+      close: "Zamknij",
+      a11yCarouselWrapperAriaLabel:
+        "Karuzela | Przewijanie w poziomie: Strza\u0142ka w lewo i w prawo",
+      a11yCarouselPrevSlideMessage: "Poprzedni slajd",
+      a11yCarouselNextSlideMessage: "Nast\u0119pny slajd",
+      a11yCarouselFirstSlideMessage: "To jest pierwszy slajd",
+      a11yCarouselLastSlideMessage: "This is the last slide",
+      a11yCarouselPaginationBulletMessage: "Id\u017a do slajdu",
+    },
+    is_rtl: false,
+    breakpoints: { xs: 0, sm: 480, md: 768, lg: 1025, xl: 1440, xxl: 1600 },
+    responsive: {
+      breakpoints: {
+        mobile: {
+          label: "Mobilny Pionowy",
+          value: 767,
+          default_value: 767,
+          direction: "max",
+          is_enabled: true,
+        },
+        mobile_extra: {
+          label: "Mobilny Poziomy",
+          value: 880,
+          default_value: 880,
+          direction: "max",
+          is_enabled: false,
+        },
+        tablet: {
+          label: "Portret tabletu",
+          value: 1024,
+          default_value: 1024,
+          direction: "max",
+          is_enabled: true,
+        },
+        tablet_extra: {
+          label: "Ekran tabletu",
+          value: 1200,
+          default_value: 1200,
+          direction: "max",
+          is_enabled: false,
+        },
+        laptop: {
+          label: "Laptop",
+          value: 1366,
+          default_value: 1366,
+          direction: "max",
+          is_enabled: false,
+        },
+        widescreen: {
+          label: "Szeroki ekran",
+          value: 2400,
+          default_value: 2400,
+          direction: "min",
+          is_enabled: false,
+        },
+      },
+    },
+    version: "3.23.4",
+    is_static: false,
+    experimentalFeatures: {
+      additional_custom_breakpoints: true,
+      container_grid: true,
+      e_swiper_latest: true,
+      e_nested_atomic_repeaters: true,
+      e_onboarding: true,
+      theme_builder_v2: true,
+      home_screen: true,
+      "ai-layout": true,
+      "landing-pages": true,
+      e_lazyload: true,
+      "display-conditions": true,
+      "form-submissions": true,
+    },
+    urls: {
+      assets: "https://www.altermmo.pl/wp-content/plugins/elementor/assets/",
+      ajaxurl: "https://www.altermmo.pl/wp-admin/admin-ajax.php",
+    },
+    nonces: { floatingButtonsClickTracking: "bfc141ebab" },
+    swiperClass: "swiper",
+    settings: { page: [], editorPreferences: [] },
+    kit: {
+      body_background_background: "classic",
+      active_breakpoints: ["viewport_mobile", "viewport_tablet"],
+      global_image_lightbox: "yes",
+      lightbox_enable_counter: "yes",
+      lightbox_enable_fullscreen: "yes",
+      lightbox_enable_zoom: "yes",
+      lightbox_enable_share: "yes",
+      lightbox_title_src: "title",
+      lightbox_description_src: "description",
+    },
+    post: {
+      id: 23846,
+      title:
+        "AlterMMO%20%E2%80%93%20Strona%20o%20grach%20MMO%2C%20MMORPG%2C%20online%2C%20multiplayer%E2%80%A6%20O%20alternatywnej%20rzeczywisto%C5%9Bci.",
+      excerpt: "",
+      featuredImage: false,
+    },
+  }
+
+  // NSL Popup and related functions
+  ;(function (undefined) {
+    let scriptOptions = {
+      _localizedStrings: {
+        redirect_overlay_title: "Hold On",
+        redirect_overlay_text:
+          "You are being redirected to another page,<br>it may take a few seconds.",
+        webview_notification_text:
+          "The selected provider doesn't support embedded browsers!",
+      },
+      _targetWindow: "prefer-popup",
+      _redirectOverlay: "overlay-with-spinner-and-message",
+      _unsupportedWebviewBehavior: "",
+    }
+    window._nslHasOpenedPopup = false
+    window._nslWebViewNoticeElement = null
+
+    window.NSLPopup = function (url, title, w, h) {
+      // ... (rest of the NSLPopup function)
+    }
+
+    let isWebView = null
+
+    function checkWebView() {
+      // ... (rest of the checkWebView function)
+    }
+
+    function isAllowedWebViewForUserAgent(provider) {
+      // ... (rest of the isAllowedWebViewForUserAgent function)
+    }
+
+    function disableButtonInWebView(providerButtonElement) {
+      // ... (rest of the disableButtonInWebView function)
+    }
+
+    window._nslDOMReady(function () {
+      // ... (rest of the _nslDOMReady function)
+    })
+
+    if (typeof BroadcastChannel === "function") {
+      const _nslLoginBroadCastChannel = new BroadcastChannel(
+        "nsl_login_broadcast_channel",
+      )
+      _nslLoginBroadCastChannel.onmessage = (event) => {
+        // ... (rest of the onmessage function)
+      }
+    }
+  })()
+  ;(function (undefined) {
+    let scriptOptions = {
+      _localizedStrings: {
+        redirect_overlay_title: "Hold On",
+        redirect_overlay_text:
+          "You are being redirected to another page,<br>it may take a few seconds.",
+        webview_notification_text:
+          "The selected provider doesn't support embedded browsers!",
+      },
+      _targetWindow: "prefer-popup",
+      _redirectOverlay: "overlay-with-spinner-and-message",
+      _unsupportedWebviewBehavior: "",
+    }
+    /**
+     * Used when Cross-Origin-Opener-Policy blocked the access to the opener. We can't have a reference of the opened windows, so we should attempt to refresh only the windows that has opened popups.
+     */
+    window._nslHasOpenedPopup = false
+    window._nslWebViewNoticeElement = null
+
+    window.NSLPopup = function (url, title, w, h) {
+      const userAgent = navigator.userAgent,
+        mobile = function () {
+          return (
+            /\b(iPhone|iP[ao]d)/.test(userAgent) ||
+            /\b(iP[ao]d)/.test(userAgent) ||
+            /Android/i.test(userAgent) ||
+            /Mobile/i.test(userAgent)
+          )
+        },
+        screenX =
+          window.screenX !== undefined ? window.screenX : window.screenLeft,
+        screenY =
+          window.screenY !== undefined ? window.screenY : window.screenTop,
+        outerWidth =
+          window.outerWidth !== undefined
+            ? window.outerWidth
+            : document.documentElement.clientWidth,
+        outerHeight =
+          window.outerHeight !== undefined
+            ? window.outerHeight
+            : document.documentElement.clientHeight - 22,
+        targetWidth = mobile() ? null : w,
+        targetHeight = mobile() ? null : h,
+        left = parseInt(screenX + (outerWidth - targetWidth) / 2, 10),
+        right = parseInt(screenY + (outerHeight - targetHeight) / 2.5, 10),
+        features = []
+      if (targetWidth !== null) {
+        features.push("width=" + targetWidth)
+      }
+      if (targetHeight !== null) {
+        features.push("height=" + targetHeight)
+      }
+      features.push("left=" + left)
+      features.push("top=" + right)
+      features.push("scrollbars=1")
+
+      const newWindow = window.open(url, title, features.join(","))
+
+      if (window.focus) {
+        newWindow.focus()
+      }
+
+      window._nslHasOpenedPopup = true
+
+      return newWindow
+    }
+
+    let isWebView = null
+
+    function checkWebView() {
+      if (isWebView === null) {
+        function _detectOS(ua) {
+          if (/Android/.test(ua)) {
+            return "Android"
+          } else if (/iPhone|iPad|iPod/.test(ua)) {
+            return "iOS"
+          } else if (/Windows/.test(ua)) {
+            return "Windows"
+          } else if (/Mac OS X/.test(ua)) {
+            return "Mac"
+          } else if (/CrOS/.test(ua)) {
+            return "Chrome OS"
+          } else if (/Firefox/.test(ua)) {
+            return "Firefox OS"
+          }
+          return ""
+        }
+
+        function _detectBrowser(ua) {
+          let android = /Android/.test(ua)
+
+          if (/Opera Mini/.test(ua) || / OPR/.test(ua) || / OPT/.test(ua)) {
+            return "Opera"
+          } else if (/CriOS/.test(ua)) {
+            return "Chrome for iOS"
+          } else if (/Edge/.test(ua)) {
+            return "Edge"
+          } else if (android && /Silk\//.test(ua)) {
+            return "Silk"
+          } else if (/Chrome/.test(ua)) {
+            return "Chrome"
+          } else if (/Firefox/.test(ua)) {
+            return "Firefox"
+          } else if (android) {
+            return "AOSP"
+          } else if (/MSIE|Trident/.test(ua)) {
+            return "IE"
+          } else if (/Safari\//.test(ua)) {
+            return "Safari"
+          } else if (/AppleWebKit/.test(ua)) {
+            return "WebKit"
+          }
+          return ""
+        }
+
+        function _detectBrowserVersion(ua, browser) {
+          if (browser === "Opera") {
+            return /Opera Mini/.test(ua)
+              ? _getVersion(ua, "Opera Mini/")
+              : / OPR/.test(ua)
+                ? _getVersion(ua, " OPR/")
+                : _getVersion(ua, " OPT/")
+          } else if (browser === "Chrome for iOS") {
+            return _getVersion(ua, "CriOS/")
+          } else if (browser === "Edge") {
+            return _getVersion(ua, "Edge/")
+          } else if (browser === "Chrome") {
+            return _getVersion(ua, "Chrome/")
+          } else if (browser === "Firefox") {
+            return _getVersion(ua, "Firefox/")
+          } else if (browser === "Silk") {
+            return _getVersion(ua, "Silk/")
+          } else if (browser === "AOSP") {
+            return _getVersion(ua, "Version/")
+          } else if (browser === "IE") {
+            return /IEMobile/.test(ua)
+              ? _getVersion(ua, "IEMobile/")
+              : /MSIE/.test(ua)
+                ? _getVersion(ua, "MSIE ")
+                : _getVersion(ua, "rv:")
+          } else if (browser === "Safari") {
+            return _getVersion(ua, "Version/")
+          } else if (browser === "WebKit") {
+            return _getVersion(ua, "WebKit/")
+          }
+          return "0.0.0"
+        }
+
+        function _getVersion(ua, token) {
+          try {
+            return _normalizeSemverString(
+              ua
+                .split(token)[1]
+                .trim()
+                .split(/[^\w\.]/)[0],
+            )
+          } catch (o_O) {}
+          return "0.0.0"
+        }
+
+        function _normalizeSemverString(version) {
+          const ary = version.split(/[\._]/)
+          return (
+            (parseInt(ary[0], 10) || 0) +
+            "." +
+            (parseInt(ary[1], 10) || 0) +
+            "." +
+            (parseInt(ary[2], 10) || 0)
+          )
+        }
+
+        function _isWebView(ua, os, browser, version, options) {
+          switch (os + browser) {
+            case "iOSSafari":
+              return false
+            case "iOSWebKit":
+              return _isWebView_iOS(options)
+            case "AndroidAOSP":
+              return false
+            case "AndroidChrome":
+              return parseFloat(version) >= 42
+                ? /; wv/.test(ua)
+                : /\d{2}\.0\.0/.test(version)
+                  ? true
+                  : _isWebView_Android(options)
+          }
+          return false
+        }
+
+        function _isWebView_iOS(options) {
+          const document = window["document"] || {}
+
+          if ("WEB_VIEW" in options) {
+            return options["WEB_VIEW"]
+          }
+          return !(
+            "fullscreenEnabled" in document ||
+            "webkitFullscreenEnabled" in document ||
+            false
+          )
+        }
+
+        function _isWebView_Android(options) {
+          if ("WEB_VIEW" in options) {
+            return options["WEB_VIEW"]
+          }
+          return !(
+            "requestFileSystem" in window ||
+            "webkitRequestFileSystem" in window ||
+            false
+          )
+        }
+
+        const options = {},
+          nav = window.navigator || {},
+          ua = nav.userAgent || "",
+          os = _detectOS(ua),
+          browser = _detectBrowser(ua),
+          browserVersion = _detectBrowserVersion(ua, browser)
+
+        isWebView = _isWebView(ua, os, browser, browserVersion, options)
+      }
+
+      return isWebView
+    }
+
+    function isAllowedWebViewForUserAgent(provider) {
+      const facebookAllowedWebViews = ["Instagram", "FBAV", "FBAN"]
+      let whitelist = []
+
+      if (provider && provider === "facebook") {
+        whitelist = facebookAllowedWebViews
+      }
+
+      const nav = window.navigator || {},
+        ua = nav.userAgent || ""
+
+      if (whitelist.length && ua.match(new RegExp(whitelist.join("|")))) {
+        return true
+      }
+
+      return false
+    }
+
+    function disableButtonInWebView(providerButtonElement) {
+      if (providerButtonElement) {
+        providerButtonElement.classList.add("nsl-disabled-provider")
+        providerButtonElement.setAttribute("href", "#")
+
+        providerButtonElement.addEventListener("pointerdown", (e) => {
+          if (!window._nslWebViewNoticeElement) {
+            window._nslWebViewNoticeElement = document.createElement("div")
+            window._nslWebViewNoticeElement.id = "nsl-notices-fallback"
+            window._nslWebViewNoticeElement.addEventListener(
+              "pointerdown",
+              function (e) {
+                this.parentNode.removeChild(this)
+                window._nslWebViewNoticeElement = null
+              },
+            )
+            const webviewNoticeHTML =
+              '<div class="error"><p>' +
+              scriptOptions._localizedStrings.webview_notification_text +
+              "</p></div>"
+
+            window._nslWebViewNoticeElement.insertAdjacentHTML(
+              "afterbegin",
+              webviewNoticeHTML,
+            )
+            document.body.appendChild(window._nslWebViewNoticeElement)
+          }
+        })
+      }
+    }
+
+    window._nslDOMReady(function () {
+      window.nslRedirect = function (url) {
+        if (scriptOptions._redirectOverlay) {
+          const overlay = document.createElement("div")
+          overlay.id = "nsl-redirect-overlay"
+          let overlayHTML = ""
+          const overlayContainer = "<div id='nsl-redirect-overlay-container'>",
+            overlayContainerClose = "</div>",
+            overlaySpinner = "<div id='nsl-redirect-overlay-spinner'></div>",
+            overlayTitle =
+              "<p id='nsl-redirect-overlay-title'>" +
+              scriptOptions._localizedStrings.redirect_overlay_title +
+              "</p>",
+            overlayText =
+              "<p id='nsl-redirect-overlay-text'>" +
+              scriptOptions._localizedStrings.redirect_overlay_text +
+              "</p>"
+
+          switch (scriptOptions._redirectOverlay) {
+            case "overlay-only":
+              break
+            case "overlay-with-spinner":
+              overlayHTML =
+                overlayContainer + overlaySpinner + overlayContainerClose
+              break
+            default:
+              overlayHTML =
+                overlayContainer +
+                overlaySpinner +
+                overlayTitle +
+                overlayText +
+                overlayContainerClose
+              break
+          }
+
+          overlay.insertAdjacentHTML("afterbegin", overlayHTML)
+          document.body.appendChild(overlay)
+        }
+
+        window.location = url
+      }
+
+      let targetWindow = scriptOptions._targetWindow || "prefer-popup",
+        lastPopup = false
+
+      document.addEventListener("click", function (e) {
+        if (e.target) {
+          const buttonLinkElement =
+            e.target.closest('a[data-plugin="nsl"][data-action="connect"]') ||
+            e.target.closest('a[data-plugin="nsl"][data-action="link"]')
+          if (buttonLinkElement) {
+            if (lastPopup && !lastPopup.closed) {
+              e.preventDefault()
+              lastPopup.focus()
+            } else {
+              let href = buttonLinkElement.href,
+                success = false
+              if (href.indexOf("?") !== -1) {
+                href += "&"
+              } else {
+                href += "?"
+              }
+
+              const redirectTo = buttonLinkElement.dataset.redirect
+              if (redirectTo === "current") {
+                href +=
+                  "redirect=" + encodeURIComponent(window.location.href) + "&"
+              } else if (redirectTo && redirectTo !== "") {
+                href += "redirect=" + encodeURIComponent(redirectTo) + "&"
+              }
+
+              if (targetWindow !== "prefer-same-window" && checkWebView()) {
+                targetWindow = "prefer-same-window"
+              }
+
+              if (targetWindow === "prefer-popup") {
+                lastPopup = NSLPopup(
+                  href + "display=popup",
+                  "nsl-social-connect",
+                  buttonLinkElement.dataset.popupwidth,
+                  buttonLinkElement.dataset.popupheight,
+                )
+                if (lastPopup) {
+                  success = true
+                  e.preventDefault()
+                }
+              } else if (targetWindow === "prefer-new-tab") {
+                const newTab = window.open(href + "display=popup", "_blank")
+                if (newTab) {
+                  if (window.focus) {
+                    newTab.focus()
+                  }
+                  success = true
+                  window._nslHasOpenedPopup = true
+                  e.preventDefault()
+                }
+              }
+
+              if (!success) {
+                window.location = href
+                e.preventDefault()
+              }
+            }
+          }
+        }
+      })
+
+      let buttonCountChanged = false
+
+      const googleLoginButtons = document.querySelectorAll(
+        ' a[data-plugin="nsl"][data-provider="google"]',
+      )
+      if (googleLoginButtons.length && checkWebView()) {
+        googleLoginButtons.forEach(function (googleLoginButton) {
+          if (scriptOptions._unsupportedWebviewBehavior === "disable-button") {
+            disableButtonInWebView(googleLoginButton)
+          } else {
+            googleLoginButton.remove()
+            buttonCountChanged = true
+          }
+        })
+      }
+
+      const facebookLoginButtons = document.querySelectorAll(
+        ' a[data-plugin="nsl"][data-provider="facebook"]',
+      )
+      if (
+        facebookLoginButtons.length &&
+        checkWebView() &&
+        /Android/.test(window.navigator.userAgent) &&
+        !isAllowedWebViewForUserAgent("facebook")
+      ) {
+        facebookLoginButtons.forEach(function (facebookLoginButton) {
+          if (scriptOptions._unsupportedWebviewBehavior === "disable-button") {
+            disableButtonInWebView(facebookLoginButton)
+          } else {
+            facebookLoginButton.remove()
+            buttonCountChanged = true
+          }
+        })
+      }
+
+      const separators = document.querySelectorAll("div.nsl-separator")
+      if (buttonCountChanged && separators.length) {
+        separators.forEach(function (separator) {
+          const separatorParentNode = separator.parentNode
+          if (separatorParentNode) {
+            const separatorButtonContainer = separatorParentNode.querySelector(
+              "div.nsl-container-buttons",
+            )
+            if (
+              separatorButtonContainer &&
+              !separatorButtonContainer.hasChildNodes()
+            ) {
+              separator.remove()
+            }
+          }
+        })
+      }
+    })
+
+    /**
+     * Cross-Origin-Opener-Policy blocked the access to the opener
+     */
+    if (typeof BroadcastChannel === "function") {
+      const _nslLoginBroadCastChannel = new BroadcastChannel(
+        "nsl_login_broadcast_channel",
+      )
+      _nslLoginBroadCastChannel.onmessage = (event) => {
+        if (window?._nslHasOpenedPopup && event.data?.action === "redirect") {
+          window._nslHasOpenedPopup = false
+
+          const url = event.data?.href
+          _nslLoginBroadCastChannel.close()
+          if (typeof window.nslRedirect === "function") {
+            window.nslRedirect(url)
+          } else {
+            window.opener.location = url
+          }
+        }
+      }
+    }
+  })()
+</script>
+<script type="text/javascript">
+  window._nslDOMReady = function (callback) {
+    if (
+      document.readyState === "complete" ||
+      document.readyState === "interactive"
+    ) {
+      callback()
+    } else {
+      document.addEventListener("DOMContentLoaded", callback)
+    }
+  }
+</script>
+
+<script type="text/javascript">
+  jQuery(document).ready(function () {
+    var pageId = "23846" // Pobierz ID strony
+    var streamType = jQuery(".twitch-live-stream-wrapper").attr(
+      "data-stream-type",
+    )
+
+    if (streamType === "local") {
+      // Jeśli mamy lokalny stream, zatrzymujemy globalną logikę
+      console.log("Local streamer is live, skipping global stream.")
+    } else {
+      setupTwitchLiveChecker(pageId) // Uruchom funkcję sprawdzania statusu streamu tylko dla globalnych streamów
+    }
+  })
+</script>
+
+<script is:inline>
+  // Funkcja AJAX do sprawdzania statusu streamu
+  function checkTwitchLiveStream(pageId, streamType) {
+    jQuery.ajax({
+      url: ajaxurl,
+      type: "POST",
+      data: {
+        action: "check_twitch_live_status",
+        page_id: pageId,
+      },
+      success: function (response) {
+        // console.log('Status streamu (' + streamType + '):', response);
+        if (response.success && response.data.live_streamer) {
+          var iframe = jQuery(".twitch-live-stream")
+          var currentSrc = iframe.attr("src")
+          var currentChannel = currentSrc
+            ? currentSrc.match(/channel=([^&]+)/)
+            : null
+          currentChannel = currentChannel ? currentChannel[1] : null
+
+          if (currentChannel !== response.data.live_streamer) {
+            // console.log('Zmiana streamu na: ' + response.data.live_streamer);
+            iframe.attr(
+              "src",
+              "https://player.twitch.tv/?channel=" +
+                response.data.live_streamer +
+                "&parent=" +
+                window.location.hostname,
+            )
+            jQuery(".twitch-live-stream-wrapper").show()
+            jQuery(".twitch-live-stream-info").hide()
+          } else {
+            // console.log('Streamer jest ten sam, brak potrzeby aktualizacji.');
+          }
+        } else if (streamType === "local") {
+          // console.log('Brak lokalnego streamera, sprawdzam globalnego.');
+          checkTwitchLiveStream("option", "global")
+        } else {
+          console.log("Brak aktywnego streamera.")
+          jQuery(".twitch-live-stream-wrapper").hide()
+          jQuery(".twitch-live-stream-info").show()
+        }
+      },
+      error: function (xhr, status, error) {
+        console.error("Błąd podczas sprawdzania statusu streamu:", error)
+        console.log("Szczegóły:", xhr.responseText)
+      },
+    })
+  }
+
+  // Funkcja do ustawienia interwału sprawdzania
+  function setupTwitchLiveChecker(pageId) {
+    // Natychmiastowe sprawdzenie przy załadowaniu strony
+    checkTwitchLiveStream(pageId, "local")
+
+    // Ustawienie interwału sprawdzania co minutę
+    setInterval(function () {
+      checkTwitchLiveStream(pageId, "local")
+    }, 60000) // Co 60 sekund
+  }
+
+  // Wywołaj funkcję po załadowaniu strony
+  jQuery(document).ready(function () {
+    var pageId = jQuery("body").data("page-id")
+    if (!pageId) {
+      console.error("Nie znaleziono atrybutu data-page-id na elemencie body.")
+      return
+    }
+    // console.log("Rozpoczynam sprawdzanie streamerów dla strony: " + pageId);
+    setupTwitchLiveChecker(pageId)
+  })
+</script>
+
+<script id="jquery-core-js-extra">
+  var pp = {
+    ajax_url: "https://www.altermmo.pl/wp-admin/admin-ajax.php",
+  }
+</script>
+<script
+  src="https://www.altermmo.pl/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"
+  id="jquery-core-js"
+></script>
+<script
+  src="https://www.altermmo.pl/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"
+  id="jquery-migrate-js"
+></script>
+<script
+  src="https://www.altermmo.pl/wp-content/plugins/elementor/assets/lib/font-awesome/js/v4-shims.min.js?ver=3.23.4"
+  id="font-awesome-4-shim-js"
+></script>
+<link
+  rel="stylesheet"
+  id="elementor-post-24256-css"
+  href="https://www.altermmo.pl/wp-content/uploads/elementor/css/post-24256.css?ver=1729009943"
+  media="all"
+/>
+<link
+  rel="stylesheet"
+  id="widget-countdown-css"
+  href="https://www.altermmo.pl/wp-content/plugins/elementor-pro/assets/css/widget-countdown.min.css?ver=3.24.4"
+  media="all"
+/>
+<script id="gamipress-js-js-extra">
+  var gamipress = {
+    ajaxurl: "/wp-admin/admin-ajax.php",
+    nonce: "b1b25ebab4",
+    achievement_fields: [
+      "id",
+      "title",
+      "title_size",
+      "link",
+      "thumbnail",
+      "thumbnail_size",
+      "points_awarded",
+      "points_awarded_thumbnail",
+      "excerpt",
+      "times_earned",
+      "global_times_earned",
+      "steps",
+      "toggle",
+      "heading",
+      "heading_size",
+      "unlock_button",
+      "earners",
+      "earners_limit",
+      "layout",
+      "align",
+    ],
+  }
+</script>
+<script
+  src="https://www.altermmo.pl/wp-content/plugins/gamipress/assets/js/gamipress.min.js?ver=7.1.0"
+  id="gamipress-js-js"
+>
+</script>
+<script
+  src="https://www.altermmo.pl/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=3.24.4"
+  id="e-sticky-js"
+>
+</script>
+<script
+  src="https://www.altermmo.pl/wp-content/plugins/seriously-simple-podcasting/assets/js/castos-player.min.js?ver=3.4.0"
+  id="ssp-castos-player-js"
+>
+</script>
+
+<script id="eael-general-js-extra">
+  var localize = {
+    ajaxurl: "https://www.altermmo.pl/wp-admin/admin-ajax.php",
+    nonce: "334a0fd00a",
+    i18n: { added: "Added ", compare: "Compare", loading: "Loading..." },
+    eael_translate_text: {
+      required_text: "is a required field",
+      invalid_text: "Invalid",
+      billing_text: "Billing",
+      shipping_text: "Shipping",
+      fg_mfp_counter_text: "of",
+    },
+    page_permalink: "https://www.altermmo.pl/",
+    cart_redirectition: "no",
+    cart_page_url: "",
+    el_breakpoints: {
+      mobile: {
+        label: "Mobilny Pionowy",
+        value: 767,
+        default_value: 767,
+        direction: "max",
+        is_enabled: true,
+      },
+      mobile_extra: {
+        label: "Mobilny Poziomy",
+        value: 880,
+        default_value: 880,
+        direction: "max",
+        is_enabled: false,
+      },
+      tablet: {
+        label: "Portret tabletu",
+        value: 1024,
+        default_value: 1024,
+        direction: "max",
+        is_enabled: true,
+      },
+      tablet_extra: {
+        label: "Ekran tabletu",
+        value: 1200,
+        default_value: 1200,
+        direction: "max",
+        is_enabled: false,
+      },
+      laptop: {
+        label: "Laptop",
+        value: 1366,
+        default_value: 1366,
+        direction: "max",
+        is_enabled: false,
+      },
+      widescreen: {
+        label: "Szeroki ekran",
+        value: 2400,
+        default_value: 2400,
+        direction: "min",
+        is_enabled: false,
+      },
+    },
+  }
+</script>
+<script
+  src="https://www.altermmo.pl/wp-content/plugins/essential-addons-for-elementor-lite/assets/front-end/js/view/general.min.js?ver=6.0.6"
+  id="eael-general-js"
+></script>
+<script
+  src="https://www.altermmo.pl/wp-content/uploads/ac_assets/mega-menu/ue_mega_menu.js?ver=1.5.118"
+  id="uc_ac_assets_file_ue_mega_menu_js_51291-js"
+></script>
+<script
+  src="https://www.altermmo.pl/wp-content/uploads/ac_assets/ue_ajax_search/ue_ajax_search.js?ver=1.5.118"
+  id="uc_ac_assets_file_ue_ajax_search_js_30750-js"
+></script>
+<script
+  src="https://www.altermmo.pl/wp-content/uploads/ac_assets/uc_image_tooltip/tooltipster.bundle.min.js?ver=1.5.118"
+  id="uc_ac_assets_file_tooltipster_bundle_min_js_39900-js"
+></script>
+<script
+  src="https://www.altermmo.pl/wp-content/plugins/unlimited-elements-for-elementor-premium/assets_libraries/remote/ue-remote-controls.js?ver=1.5.118"
+  id="ue_remote_controls-js"
+></script>
+<script
+  src="https://www.altermmo.pl/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.24.4"
+  id="elementor-pro-webpack-runtime-js"
+></script>
+<script
+  src="https://www.altermmo.pl/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.23.4"
+  id="elementor-webpack-runtime-js"
+></script>
+<script
+  src="https://www.altermmo.pl/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.23.4"
+  id="elementor-frontend-modules-js"
+></script>
+<script
+  src="https://www.altermmo.pl/wp-includes/js/dist/hooks.min.js?ver=2810c76e705dd1a53b18"
+  id="wp-hooks-js"
+></script>
+<script
+  src="https://www.altermmo.pl/wp-includes/js/dist/i18n.min.js?ver=5e580eb46a90c2b997e6"
+  id="wp-i18n-js"
+></script>
+<script id="wp-i18n-js-after">
+  wp.i18n.setLocaleData({ "text direction\u0004ltr": ["ltr"] })
+</script>
+<script id="elementor-pro-frontend-js-before">
+  var ElementorProFrontendConfig = {
+    ajaxurl: "https://www.altermmo.pl/wp-admin/admin-ajax.php",
+    nonce: "5fec4c5881",
+    urls: {
+      assets:
+        "https://www.altermmo.pl/wp-content/plugins/elementor-pro/assets/",
+      rest: "https://www.altermmo.pl/wp-json/",
+    },
+    settings: { lazy_load_background_images: true },
+    shareButtonsNetworks: {
+      facebook: { title: "Facebook", has_counter: true },
+      twitter: { title: "Twitter" },
+      linkedin: { title: "LinkedIn", has_counter: true },
+      pinterest: { title: "Pinterest", has_counter: true },
+      reddit: { title: "Reddit", has_counter: true },
+      vk: { title: "VK", has_counter: true },
+      odnoklassniki: { title: "OK", has_counter: true },
+      tumblr: { title: "Tumblr" },
+      digg: { title: "Digg" },
+      skype: { title: "Skype" },
+      stumbleupon: { title: "StumbleUpon", has_counter: true },
+      mix: { title: "Mix" },
+      telegram: { title: "Telegram" },
+      pocket: { title: "Pocket", has_counter: true },
+      xing: { title: "XING", has_counter: true },
+      whatsapp: { title: "WhatsApp" },
+      email: { title: "Email" },
+      print: { title: "Print" },
+      "x-twitter": { title: "X" },
+      threads: { title: "Threads" },
+    },
+    facebook_sdk: { lang: "pl_PL", app_id: "" },
+    lottie: {
+      defaultAnimationUrl:
+        "https://www.altermmo.pl/wp-content/plugins/elementor-pro/modules/lottie/assets/animations/default.json",
+    },
+  }
+</script>
+<script
+  src="https://www.altermmo.pl/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.24.4"
+  id="elementor-pro-frontend-js"
+></script>
+<script
+  src="https://www.altermmo.pl/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2"
+  id="elementor-waypoints-js"
+></script>
+<script
+  src="https://www.altermmo.pl/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3"
+  id="jquery-ui-core-js"
+></script>
+<script id="elementor-frontend-js-before">
+  var elementorFrontendConfig = {
+    environmentMode: {
+      edit: false,
+      wpPreview: false,
+      isScriptDebug: false,
+    },
+    i18n: {
+      shareOnFacebook: "Udost\u0119pnij na Facebooku",
+      shareOnTwitter: "Udost\u0119pnij na Twitterze",
+      pinIt: "Przypnij",
+      download: "Pobierz",
+      downloadImage: "Pobierz obraz",
+      fullscreen: "Tryb pe\u0142noekranowy",
+      zoom: "Powi\u0119ksz",
+      share: "Udost\u0119pnij",
+      playVideo: "Odtw\u00f3rz wideo",
+      previous: "Poprzednie",
+      next: "Nast\u0119pne",
+      close: "Zamknij",
+      a11yCarouselWrapperAriaLabel:
+        "Karuzela | Przewijanie w poziomie: Strza\u0142ka w lewo i w prawo",
+      a11yCarouselPrevSlideMessage: "Poprzedni slajd",
+      a11yCarouselNextSlideMessage: "Nast\u0119pny slajd",
+      a11yCarouselFirstSlideMessage: "To jest pierwszy slajd",
+      a11yCarouselLastSlideMessage: "This is the last slide",
+      a11yCarouselPaginationBulletMessage: "Id\u017a do slajdu",
+    },
+    is_rtl: false,
+    breakpoints: { xs: 0, sm: 480, md: 768, lg: 1025, xl: 1440, xxl: 1600 },
+    responsive: {
+      breakpoints: {
+        mobile: {
+          label: "Mobilny Pionowy",
+          value: 767,
+          default_value: 767,
+          direction: "max",
+          is_enabled: true,
+        },
+        mobile_extra: {
+          label: "Mobilny Poziomy",
+          value: 880,
+          default_value: 880,
+          direction: "max",
+          is_enabled: false,
+        },
+        tablet: {
+          label: "Portret tabletu",
+          value: 1024,
+          default_value: 1024,
+          direction: "max",
+          is_enabled: true,
+        },
+        tablet_extra: {
+          label: "Ekran tabletu",
+          value: 1200,
+          default_value: 1200,
+          direction: "max",
+          is_enabled: false,
+        },
+        laptop: {
+          label: "Laptop",
+          value: 1366,
+          default_value: 1366,
+          direction: "max",
+          is_enabled: false,
+        },
+        widescreen: {
+          label: "Szeroki ekran",
+          value: 2400,
+          default_value: 2400,
+          direction: "min",
+          is_enabled: false,
+        },
+      },
+    },
+    version: "3.23.4",
+    is_static: false,
+    experimentalFeatures: {
+      additional_custom_breakpoints: true,
+      container_grid: true,
+      e_swiper_latest: true,
+      e_nested_atomic_repeaters: true,
+      e_onboarding: true,
+      theme_builder_v2: true,
+      home_screen: true,
+      "ai-layout": true,
+      "landing-pages": true,
+      e_lazyload: true,
+      "display-conditions": true,
+      "form-submissions": true,
+    },
+    urls: {
+      assets: "https://www.altermmo.pl/wp-content/plugins/elementor/assets/",
+      ajaxurl: "https://www.altermmo.pl/wp-admin/admin-ajax.php",
+    },
+    nonces: { floatingButtonsClickTracking: "bfc141ebab" },
+    swiperClass: "swiper",
+    settings: { page: [], editorPreferences: [] },
+    kit: {
+      body_background_background: "classic",
+      active_breakpoints: ["viewport_mobile", "viewport_tablet"],
+      global_image_lightbox: "yes",
+      lightbox_enable_counter: "yes",
+      lightbox_enable_fullscreen: "yes",
+      lightbox_enable_zoom: "yes",
+      lightbox_enable_share: "yes",
+      lightbox_title_src: "title",
+      lightbox_description_src: "description",
+    },
+    post: {
+      id: 23846,
+      title:
+        "AlterMMO%20%E2%80%93%20Strona%20o%20grach%20MMO%2C%20MMORPG%2C%20online%2C%20multiplayer%E2%80%A6%20O%20alternatywnej%20rzeczywisto%C5%9Bci.",
+      excerpt: "",
+      featuredImage: false,
+    },
+  }
+</script>
+<script
+  src="https://www.altermmo.pl/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.23.4"
+  id="elementor-frontend-js"
+></script>
+<script
+  src="https://www.altermmo.pl/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.24.4"
+  id="pro-elements-handlers-js"
+></script>
+<script
+  src="https://www.altermmo.pl/wp-content/plugins/powerpack-elements/assets/lib/tooltipster/tooltipster.min.js?ver=2.10.26"
+  id="pp-tooltipster-js"
+></script>
+<script
+  src="https://www.altermmo.pl/wp-content/plugins/powerpack-elements/assets/js/min/frontend-tooltip.min.js?ver=2.10.26"
+  id="pp-elements-tooltip-js"
+></script>
+
+<!-- GA Google Analytics @ https://m0n.co/ga -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D2KJ47YVZZ"
+></script>
+<script is:inline>
+  window.dataLayer = window.dataLayer || []
+  function gtag() {
+    dataLayer.push(arguments)
+  }
+  gtag("js", new Date())
+  gtag("config", "G-D2KJ47YVZZ")
+</script>

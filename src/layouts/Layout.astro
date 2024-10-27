@@ -1,0 +1,32 @@
+---
+import "@/styles/globals.css"
+
+import Head from "@/components/Head.astro"
+
+import TopNav from "@/components/TopNav.vue"
+import OgTopNav from "@/components/OgTopNav.vue"
+import OgSideNav from "@/components/OgSideNav.vue"
+---
+
+<!doctype html>
+<html lang="pl-PL">
+  <Head />
+
+  <body
+    class="home page-template-default page page-id-23846 wp-custom-logo elementor-default elementor-kit-2524 elementor-page elementor-page-23846"
+  >
+    <TopNav client:load />
+
+    <div
+      data-elementor-type="header"
+      data-elementor-id="23751"
+      class="elementor elementor-23751 elementor-location-header"
+      data-elementor-post-type="elementor_library"
+    >
+      <!-- <OgTopNav /> -->
+      <!-- <OgSideNav /> -->
+
+      <slot />
+    </div>
+  </body>
+</html>
